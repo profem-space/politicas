@@ -9,7 +9,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
             color: #24292e;
-            max-width: 800px;
+            max-width: 850px;
             margin: 40px auto;
             padding: 0 20px;
             background-color: #fafbfc;
@@ -18,64 +18,96 @@
             background: #ffffff;
             padding: 40px;
             border: 1px solid #e1e4e8;
-            border-radius: 6px;
+            border-radius: 8px;
             box-shadow: 0 1px 3px rgba(27,31,35,0.05);
         }
         h1 {
             color: #0366d6;
-            border-bottom: 1px solid #eaecef;
+            border-bottom: 2px solid #eaecef;
             padding-bottom: 12px;
-            font-size: 28px;
+            font-size: 26px;
         }
         h2 {
             color: #24292e;
-            margin-top: 30px;
-            border-bottom: 1px solid #fff;
-            font-size: 20px;
+            margin-top: 28px;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 6px;
+            font-size: 19px;
         }
         p, li {
-            font-size: 16px;
+            font-size: 15px;
             color: #444d56;
             text-align: justify;
         }
         ul {
-            padding-left: 20px;
+            padding-left: 22px;
+        }
+        li {
+            margin-bottom: 8px;
         }
         .fecha {
             color: #6a737d;
             font-style: italic;
             margin-bottom: 20px;
         }
+        .destacado {
+            background-color: #f6f8fa;
+            border-left: 4px solid #0366d6;
+            padding: 12px 16px;
+            margin: 16px 0;
+            border-radius: 0 4px 4px 0;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Política de Privacidad - Pico y Placa General</h1>
-        <p class="fecha">Última actualización: Julio 2026</p>
+        <p class="fecha">Última actualización: Agosto 2026</p>
         
-        <p>El desarrollador <strong>John Fredy Baquero Hernández</strong> opera la aplicación móvil <strong>Pico y Placa General</strong>. Esta página le informa sobre nuestras políticas relativas a la recopilación, uso y divulgación de datos personales cuando utiliza nuestra aplicación.</p>
+        <p>El desarrollador <strong>John Fredy Baquero Hernández</strong> opera la aplicación móvil <strong>Pico y Placa General</strong> (en adelante, "la Aplicación"). Esta página tiene como objetivo informar a los usuarios sobre nuestras políticas y procedimientos relativos a la recopilación, uso, divulgación y protección de los datos personales cuando utilizan nuestros servicios.</p>
         
-        <h2>1. Recopilación y Uso de Información (Datos Locales)</h2>
-        <p>Para ofrecer las funciones de monitoreo de restricciones vehiculares, la aplicación requiere que usted ingrese datos como la placa, tipo de vehículo, tipo de servicio y ciudad base.</p>
+        <h2>1. Información General y Almacenamiento Local</h2>
+        <p>Para la correcta prestación del servicio de monitoreo vehicular, la Aplicación permite el ingreso manual de datos como: placa, tipo de vehículo (carro o moto), tipo de servicio (particular o público/taxi) y ciudad base seleccionada.</p>
         <ul>
-            <li><strong>Almacenamiento Local:</strong> Toda la información de los vehículos ingresados se almacena de forma <strong>estrictamente local</strong> en el dispositivo del usuario mediante una base de datos interna (SQLite/Room).</li>
-            <li><strong>Sin Servidores Externos:</strong> Nosotros no recopilamos, transmitimos, ni almacenamos estos datos en ningún servidor externo, base de datos en la nube o infraestructura ajena al propio teléfono celular.</li>
+            <li><strong>Almacenamiento Estrictamente Local:</strong> La información ingresada por el usuario se procesa y almacena de forma exclusiva en la memoria interna de su dispositivo mediante la base de datos local SQLite/Room.</li>
+            <li><strong>Sin Servidores Propios:</strong> La Aplicación no transmite ni almacena las placas ni los registros vehiculares en servidores externos, bases de datos remotas ni infraestructuras en la nube administradas por el desarrollador.</li>
         </ul>
-        
-        <h2>2. Proveedores de Servicios y Publicidad (Terceros)</h2>
-        <p>Esta aplicación utiliza los servicios de <strong>Google AdMob</strong> para mostrar anuncios publicitarios con fines de monetización. El SDK de terceros puede recopilar información utilizada para identificar su dispositivo:</p>
+
+        <h2>2. Acceso y Tratamiento de Datos de Ubicación (Primer y Segundo Plano)</h2>
+        <div class="destacado">
+            <strong>Divulgación Destacada sobre Ubicación:</strong> Pico y Placa General accede a los datos de geolocalización aproximada y precisa del dispositivo (incluyendo el acceso en segundo plano cuando la aplicación está cerrada o no está en uso) con el fin único de proveer la funcionalidad principal de monitoreo y alertas automatizadas de restricción vehicular.
+        </div>
+        <p>El acceso a la ubicación geográfica se rige bajo los siguientes principios de necesidad y proporcionalidad:</p>
         <ul>
-            <li>Google AdMob puede recopilar datos como el ID de publicidad de Android (GAID), datos de cookies e identificadores únicos de hardware para personalizar los anuncios según las políticas de privacidad de Google. Puede consultar sus términos en la <a href="https://policies.google.com/privacy" target="_blank">Política de Privacidad de Google</a>.</li>
+            <li><strong>Detección de Jurisdicción y Normativa:</strong> Determinar automáticamente la ciudad o municipio en el que se encuentra el vehículo para aplicar el esquema regulatorio y el calendario de restricción vehicular correspondiente en tiempo real.</li>
+            <li><strong>Alertas Horarias Predictivas en Segundo Plano:</strong> Ejecutar los receptores de alarmas para notificar al usuario de forma oportuna a las 5:00 AM (alerta temprana matutina), 8:00 AM (Pico y Placa Regional en corredores de acceso en festivos) y 7:00 PM (aviso previo a la finalización de la restricción), adaptando el mensaje a la zona donde efectivamente se desplaza la unidad.</li>
+            <li><strong>Procesamiento Efímero y Privacidad:</strong> Las coordenadas de geolocalización son evaluadas efímeramente y de forma local en el dispositivo del usuario. No se genera ningún historial de rastreo, no se perfilan trayectos y los datos de ubicación no se venden, arriendan ni comparten con terceras partes para fines comerciales.</li>
         </ul>
-        
-        <h2>3. Permisos del Dispositivo</h2>
-        <p>La aplicación puede solicitar permisos estándar del sistema operativo (como el acceso a notificaciones o alarmas exactas) con el único fin de despachar las alertas horarias programadas por el usuario. No se rastrea la ubicación en segundo plano para ser enviada a terceros.</p>
-        
-        <h2>4. Seguridad de los Datos</h2>
-        <p>Al guardarse los datos dentro del entorno seguro del sistema operativo Android en su dispositivo, la seguridad de los mismos depende de la protección física y lógica de su propio teléfono celular.</p>
-        
-        <h2>5. Contacto</h2>
-        <p>Si tiene alguna pregunta o sugerencia sobre esta Política de Privacidad, no dude en ponerse en contacto con el desarrollador a través del correo electrónico de soporte configurado en la tienda de aplicaciones.</p>
+
+        <h2>3. Permisos Especiales del Sistema Operativo</h2>
+        <p>Para garantizar el funcionamiento continuo de los servicios en segundo plano y los widgets de la pantalla de inicio, la Aplicación solicita los siguientes permisos del sistema:</p>
+        <ul>
+            <li><strong>Notificaciones (POST_NOTIFICATIONS):</strong> Requerido para mostrar avisos sonoros y visuales en la barra de estado del dispositivo.</li>
+            <li><strong>Alarmas Exactas (SCHEDULE_EXACT_ALARM):</strong> Utilizado para despertar el procesador en los minutos exactos programados para las alertas sin sufrir demoras por el modo de optimización de batería del sistema.</li>
+            <li><strong>Ubicación en Primer y Segundo Plano (ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, ACCESS_BACKGROUND_LOCATION):</strong> Requerido exclusivamente para la verificación geográfica autónoma mencionada en el punto anterior.</li>
+        </ul>
+
+        <h2>4. Proveedores de Servicios y Publicidad de Terceros</h2>
+        <p>La Aplicación integra el SDK de <strong>Google AdMob</strong> para la exhibición de anuncios publicitarios con fines de sostenimiento del proyecto. Dicho proveedor de terceros puede recopilar y procesar información técnica de acuerdo con sus propias políticas:</p>
+        <ul>
+            <li>Google AdMob puede recopilar identificadores de publicidad móvil (como el Google Advertising ID - GAID), información del dispositivo, datos de rendimiento y diagnóstico de red.</li>
+            <li>Para más detalles sobre cómo Google gestiona los datos de los usuarios, le recomendamos revisar la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidad y Términos de Google</a>.</li>
+        </ul>
+
+        <h2>5. Seguridad de los Datos</h2>
+        <p>La seguridad de la información reside en las capas de protección nativas del sistema operativo Android (aislamiento de aplicaciones / Sandbox). Dado que los datos no viajan a servidores externos, la confidencialidad de la información registrada depende de las medidas de seguridad físicas y de acceso configuradas por el usuario en su teléfono móvil.</p>
+
+        <h2>6. Consentimiento y Control del Usuario</h2>
+        <p>El usuario puede revocar en cualquier momento los permisos de ubicación o notificaciones otorgados a la Aplicación mediante el menú de configuración de su dispositivo Android (Ajustes ➔ Aplicaciones ➔ Pico y Placa General ➔ Permisos). Asimismo, al eliminar los vehículos desde la pantalla principal o desinstalar la aplicación, todos los registros almacenados localmente se eliminan de forma permanente e irrecuperable.</p>
+
+        <h2>7. Contacto</h2>
+        <p>Si tiene inquietudes, preguntas o sugerencias relacionadas con el tratamiento de datos y esta Política de Privacidad, puede comunicarse directamente con el desarrollador a través del canal oficial de atención técnica:</p>
+        <p><strong>Correo electrónico de soporte:</strong> baquerohernandez@gmail.com</p>
     </div>
 </body>
 </html>
